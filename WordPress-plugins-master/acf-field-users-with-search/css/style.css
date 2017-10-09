@@ -1,0 +1,102 @@
+/* line 1, ../sass/style.scss */
+.acf-users-with-search {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 200px;
+}
+/* line 6, ../sass/style.scss */
+.acf-users-with-search * {
+  box-sizing: border-box;
+}
+/* line 9, ../sass/style.scss */
+.acf-users-with-search .left,
+.acf-users-with-search .right {
+  background: #fff;
+  border: 1px solid #ccc;
+  -webkit-flex: 0 0 49.5%;
+      -ms-flex: 0 0 49.5%;
+          flex: 0 0 49.5%;
+}
+/* line 15, ../sass/style.scss */
+.acf-users-with-search .right,
+.acf-users-with-search .left > ul {
+  overflow: auto;
+}
+/* line 19, ../sass/style.scss */
+.acf-users-with-search .left {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+/* line 23, ../sass/style.scss */
+.acf-users-with-search .search-field {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #ccc;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex: none;
+      -ms-flex: none;
+          flex: none;
+  height: 50px;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+/* line 31, ../sass/style.scss */
+.acf-users-with-search .search-field input {
+  border: 1px solid #ddd;
+  border-radius: 13px;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.07);
+  color: #32373c;
+  font: 12px/13px sans-serif;
+  padding: 5px 9px !important;
+  width: 95% !important;
+}
+/* line 41, ../sass/style.scss */
+.acf-users-with-search ul {
+  margin: 0 !important;
+}
+/* line 44, ../sass/style.scss */
+.acf-users-with-search li {
+  border-bottom: 1px solid #f8f8f8;
+  color: #0073aa;
+  cursor: pointer;
+  font-size: 13px;
+  line-height: 1.5em;
+  margin: 0 !important;
+  padding: 7px 30px 7px 9px;
+  position: relative;
+}
+/* line 54, ../sass/style.scss */
+.acf-users-with-search li.disable, .acf-users-with-search li.template, .acf-users-with-search li.selected {
+  display: none;
+}
+/* line 59, ../sass/style.scss */
+.acf-users-with-search li:hover {
+  background: #eaf2fa;
+}
+/* line 62, ../sass/style.scss */
+.acf-users-with-search li:hover .acf-button-add,
+.acf-users-with-search li:hover .acf-button-remove {
+  display: block;
+}
+/* line 68, ../sass/style.scss */
+.acf-users-with-search .acf-button-add,
+.acf-users-with-search .acf-button-remove {
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}

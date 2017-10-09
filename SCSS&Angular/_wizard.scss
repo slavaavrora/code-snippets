@@ -1,0 +1,376 @@
+.page-orders-wizard {
+    .page-content {
+        display: flex;
+
+        h1 {
+            margin-bottom: 3rem;
+
+            @media all and (max-width: 800px) {
+                display: none;
+            }
+        }
+
+        @media all and (max-width: 800px) {
+            flex-wrap: wrap;
+        }
+    }
+    .steps-block {
+        flex: auto;
+
+        .msIE & {
+            flex: 1 1 auto; // for IE 10
+            width: 100%; // for IE
+        }
+    }
+    .progress-block {
+        border-left: 1px solid #eee;
+        flex: 0 0 20rem;
+        margin-left: 2rem;
+        padding-left: 2rem;
+
+        @media all and (max-width: 1600px) {
+            flex-basis: 16rem;
+            margin-left: 1em;
+            padding-left: 1em;
+        }
+        @media all and (max-width: 800px) {
+            border-left: 0;
+            flex: auto;
+            margin-left: 0;
+            order: -1;
+            padding-left: 0;
+
+            .msIE & {
+                flex: 1 1 auto; // for IE 10
+            }
+        }
+    }
+    .progress-bar {
+        .progress {
+            border-left: 5px solid $primaryColor;
+            height: 5px;
+            margin-top: .5em;
+        }
+        .filler {
+            background: $primaryColor;
+            display: block;
+            height: 100%;
+            transition: $transitionDuration;
+        }
+    }
+    .step-descriptions {
+        margin: 2em 0;
+        padding: 2em 0;
+        position: relative;
+
+        &::after,
+        &::before {
+            @extend %absoluteCenter;
+            background: #eee;
+            content: "";
+            height: 1px;
+            top: 0;
+            width: 50%;
+        }
+        &::after {
+            top: 100%;
+        }
+        .icon {
+            @extend %flexCenter;
+            color: $linkHoverColor;
+            font-size: 7em;
+            margin-bottom: .3em;
+
+            @media all and (max-width: 800px) and (min-width: 481px) {
+                left: 0;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+            @media all and (max-width: 800px) {
+                font-size: 4rem;
+            }
+        }
+        .title {
+            text-align: center;
+        }
+        .item {
+            position: relative;
+
+            @media all and (max-width: 800px) and (min-width: 481px) {
+                padding-left: 6rem;
+            }
+        }
+    }
+    .wizard-buttons {
+        @extend %flexAlignCenter;
+        justify-content: flex-end;
+        margin-top: 3em;
+        text-align: right;
+
+        .button {
+            margin: .5em 0;
+
+            &:nth-child(n+2) {
+                margin-left: 1em;
+            }
+
+            @media all and (max-width: 1400px) {
+                @include buttonSmall;
+            }
+        }
+    }
+
+    .step-organization,
+    .step-product {
+        .select-block {
+            text-align: center;
+            margin: 2em 0 4em;
+        }
+        .text-control {
+            max-width: 500px;
+        }
+        .logo img {
+            @extend %imgFullSize;
+
+            .msIE & {
+                max-width: 300px; // for IE
+            }
+        }
+    }
+    .step-organization {
+        .instructions-block {
+            display: flex;
+
+            @media all and (min-width: 1601px) {
+                .msIE & .instructions {
+                    width: calc(100% - 180px - 2em); // for IE 10
+                }
+            }
+            @media all and (max-width: 1400px) {
+                display: block;
+            }
+        }
+        .logo {
+            flex: 0 0 240px;
+            margin-right: 2em;
+
+            @media all and (max-width: 1600px) {
+                flex-basis: 180px;
+            }
+            @media all and (max-width: 1400px) {
+                @include flexCenter;
+                margin-bottom: 2em;
+                margin-right: 0;
+            }
+        }
+    }
+
+    .step-product .logo {
+        @extend %flexCenter;
+        margin-top: 4em;
+    }
+    .step-about-you {
+        .columns-block {
+            @media all and (min-width: 481px) {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+        .column {
+            flex: 0 0 48%;
+        }
+        .subtitle {
+            margin-top: 2em;
+        }
+    }
+    .step-academic-history {
+        .item {
+            display: flex;
+            padding: 1em 3em 1em 0;
+            position: relative;
+
+            @media all and (max-width: 1400px) {
+                flex-wrap: wrap;
+                padding: 2em 3em 2em 0;
+
+                &:nth-child(n+2)::before {
+                    background: $lightGreyColor;
+                    content: "";
+                    height: 1px;
+                    left: 50%;
+                    position: absolute;
+                    top: 0;
+                    transform: translateX(-50%);
+                    width: 75%;
+                }
+            }
+            @media all and (max-width: 480px) {
+                padding-right: 2em;
+            }
+        }
+        .delete-item-btn {
+            $size: 2.2rem;
+
+            @extend %flexCenter;
+            color: $darkTextColor;
+            cursor: pointer;
+            font-size: 1.5rem;
+            height: $size;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 0;
+            width: $size;
+
+            &:hover {
+                color: #f33;
+            }
+            &.disabled {
+                color: #ccc;
+                cursor: no-drop;
+            }
+        }
+        .column {
+            flex: 1 0 180px;
+
+            &.provider,
+            &.course-award {
+                flex-grow: 2;
+
+                @media all and (max-width: 1400px) {
+                    flex: 1 1 50%;
+                    padding-right: .5em;
+                }
+                @media all and (max-width: 480px) {
+                    flex: 0 0 100%;
+                    padding-right: 0;
+                }
+            }
+            &.year-to,
+            &.year-from {
+                min-width: 180px;
+
+                @media all and (max-width: 1400px) {
+                    padding-left: .5em;
+                }
+                @media all and (max-width: 480px) {
+                    flex: 0 0 50%;
+                    min-width: initial;
+                }
+            }
+            &.year-to {
+                @media all and (max-width: 1400px) and (min-width: 481px) {
+                    order: 1;
+                }
+            }
+            &.year-from {
+                @media all and (max-width: 480px) {
+                    padding-left: 0;
+                    padding-right: .5em;
+                }
+            }
+
+            @media all and (min-width: 1401px) {
+                &:nth-of-type(n+2) {
+                    padding-left: .5em;
+                }
+                &:nth-last-of-type(n+2) {
+                    padding-right: .5em;
+                }
+            }
+            @media all and (max-width: 1400px) {
+                flex: 1 1 30%;
+            }
+        }
+        .text-control {
+            display: block;
+        }
+        .button-block {
+            margin-top: 3em;
+        }
+    }
+    .step-documents {
+        .columns-block {
+            display: flex;
+            margin-top: 2em;
+
+            @media all and (max-width: 1400px) {
+                display: block;
+            }
+        }
+        .instructions {
+            flex: 1 0 300px;
+
+            li {
+                font-weight: bold;
+                margin-bottom: .5em;
+            }
+
+            @media all and (max-width: 1400px) {
+                .title,
+                li::before {
+                    display: none;
+                }
+                li {
+                    display: inline-block;
+                    margin: 0;
+                    padding: .5em .5em .5em 0;
+
+                    &:nth-last-child(n+2)::after {
+                        content: ", ";
+                    }
+                }
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .uploads {
+            flex: auto;
+            margin-left: 2em;
+
+            .msIE & {
+                flex: 1 1 auto; // for IE 10
+                width: 100%; // for IE
+            }
+
+            @media all and (max-width: 1400px) {
+                margin-left: 0;
+            }
+        }
+        .dropzone-control {
+            margin-bottom: 1em;
+        }
+        .notice {
+            @extend %flexAlignCenter;
+            color: $mediumTextColor;
+
+            &::before {
+                color: rgba($primaryColor, .8);
+                flex: none;
+                font-size: 2rem;
+                margin-right: .5em;
+            }
+            .msIE & {
+                display: block; // for IE 10
+            }
+        }
+        .files-list {
+            margin-top: 1em;
+        }
+    }
+    .step-payment {
+        .smart-table .td {
+            flex-grow: 2;
+        }
+        .total-sum {
+            font-size: 2em;
+            margin-top: 1rem;
+
+            @media all and (max-width: 420px) {
+                font-size: 1.5em;
+            }
+        }
+    }
+}

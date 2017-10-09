@@ -1,0 +1,369 @@
+@import 'breakpoint';
+$breakpoint-to-ems : true;
+
+$desktop: min-width 1024px;
+$tablet-landscape: max-width 1024px;
+$tablet-portrait: max-width 950px;
+$mobile: max-width 500px;
+
+//new resolutions
+@include breakpoint($tablet-landscape) {
+    //*****************************************
+    // COMPLAINT FORM
+    //*****************************************
+    .bmrForm {
+       /* .bLeft, .bRight {
+            float   : none;
+            width   : 100%;
+            padding : 0;
+        }*/
+        .main-inputs .form-row {
+            flex-basis: 100%;
+        }
+    }
+    .headInfoForm {
+        font-size: 16px;
+    }
+    .saveEars .saveEarsText {
+        font-size: 16px;
+    }
+
+    //*****************************************
+    // COMPLAINTS ARCHIVE
+    //*****************************************
+
+    .archive-description {
+        font-size: 16px;
+    }
+
+    //*****************************************
+    // SINGLE COMPLAINT
+    //*****************************************
+    .complaint-meta * {
+        font-size: 14px;
+    }
+    .comment-respond .bmr-file-container {
+        float: none;
+    }
+    .comment-respond .comment-submit-btn {
+        text-align: center;
+    }
+    #comments.comments-area .comment-list .comment p {
+        font-size: 16px;
+    }
+    .JAL #respond button#submit {
+        width: 70%;
+    }
+    .difComplains h2 {
+        padding: 0 15px;
+    }
+    .difComplains .images a {
+        width: 33%;
+    }
+    .difComplains .images a:last-of-type {
+        display: none;
+    }
+    .JAL .content p {
+        font-size: 14px;
+    }
+    .JAL .content .spelling-notice {
+        font-size: 14px;
+    }
+    .content.com_rb {
+        padding: 1px 20px 5px;
+    }
+}
+
+@include breakpoint($tablet-portrait) {
+    //*****************************************
+    // SINGLE COMPLAINT
+    //*****************************************
+    .complaint-meta * {
+        font-size: 15px;
+    }
+    .com_rb p {
+        font-size: 16px;
+    }
+    .JAL .content p {
+        font-size: 16px;
+    }
+    .JAL #respond button#submit {
+        width: auto;
+        padding: 10px 35px;
+    }
+    .comment-reply-container .bmr-file-container {
+        float: left;
+    }
+
+    // RELATED COMPLAINTS
+    .difComplains {
+        .related-complaint-title {
+            display: none;
+        }
+        .noImage {
+            height: 180px;
+            margin: 0 auto 5px;
+
+            &:before {
+                display: none !important;
+            }
+            .complaint-status {
+                display: inline-block;
+                position: absolute;
+                right: 0;
+                top: 0;
+                padding: 15px 10px;
+                font-size: 14px;
+                font-family: GothamMed, sans-serif;
+                font-weight: normal;
+            }
+        }
+        .images {
+            margin: 5px -20px;
+
+            .thumbnail {
+                padding: 0;
+            }
+            a  {
+                width: 100%;
+
+                &:last-of-type {
+                    display: block;
+                }
+            }
+        }
+        .complaint-mobile-header {
+            display: table;
+        }
+        .post-meta {
+            display: block;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 20px 15px;
+
+            .post-meta-item {
+                line-height: 1;
+                display: inline-block;
+            }
+        }
+    }
+    .fileArchive .file-preview {
+        padding: 10px 35px 10px 10px !important;
+    }
+    .file-action-txt {
+        display: none;
+    }
+
+    //*****************************************
+    // COMPLAINTS ARCHIVE
+    //*****************************************
+    .menu-complains {
+        margin-top: 10px;
+    }
+    .archive-description-content {
+        display: none;
+    }
+    .archive-read-more {
+        display: block;
+    }
+    .post-meta-item .post-meta-currency {
+        font-size: 15px;
+    }
+}
+
+@include breakpoint($mobile) {
+    //*****************************************
+    // SINGLE COMPLAINT
+    //*****************************************
+    .recipient-select-container {
+        width: 86%;
+    }
+    .JAL #respond button#submit {
+        width: 100%;
+        padding: 21px 35px;
+        height: auto;
+    }
+    .JAL #respond button#submit:before {
+        left: 50px;
+    }
+    .JAL #respond button#submit:after {
+        right: 50px;
+    }
+    .post-meta-container {
+        padding-left : 5px;
+    }
+
+/*    .complaint-meta-text {
+        display: none;
+    }*/
+
+    .complaint-meta * {
+        vertical-align: baseline;
+    }
+
+    .dispute-sum-label {
+        display: none;
+    }
+
+    // Hide comment buttons text and show only icons
+    #comments.comments-area .comment-list .comment .comment-reply-link .comment-meta-link-icon {
+        position: static;
+        font-size: 30px;
+    }
+    #comments.comments-area .comment-list .comment .comment-reply-link {
+        padding-left: 10px;
+    }
+    #comments.comments-area .comment-list .comment .comment-action .comment-meta-link-icon {
+        font-size: 25px;
+    }
+    #comments.comments-area .comment-list .comment-body {
+        padding: 10px 10px 10px;
+    }
+    #comments.comments-area .comment-list .comment .comment-action {
+        margin-left: 0;
+        text-align: center;
+        width: 45px;
+        height: 45px;
+    }
+
+    .post-meta-container em {
+        display: block;
+    }
+
+    //*****************************************
+    // COMPLAINTS ARCHIVE
+    //*****************************************
+    .menu-complains .menuDropdown {
+        padding: 0;
+    }
+}
+@include breakpoint(1025px 1110px) {
+
+    //*****************************************
+    // SINGLE COMPLAINT
+    //*****************************************
+    // Not enought space for socials in header
+    .socialBlock .social_links {
+        display: none;
+    }
+}
+
+@include breakpoint(1025px 1190px) {
+    //*****************************************
+    // COMPLAINT FORM
+    //*****************************************
+    // Form doesn't fit
+    .bmrForm {
+
+        label {
+            font-size: 15px;
+//            height: 32px;
+        }
+        .bmr_file {
+            height: auto;
+        }
+        .radio input[type="radio"] + label {
+            margin-right: 0;
+            margin-top: 11px;
+        }
+
+        .file-preview img {
+            max-width: 100px !important;
+        }
+        .fileArchive .delFile {
+            top: auto;
+            bottom: 10px;
+        }
+    }
+}
+
+@include breakpoint(951px 1023px) {
+    //*****************************************
+    // COMPLAINT FORM
+    //*****************************************
+    .file-action-txt {
+        display: none;
+    }
+}
+
+//TODO: to check
+@include breakpoint(max-width 1165px) {
+    //*****************************************
+    // SINGLE COMPLAINT
+    //*****************************************
+    .complaint-form-first-group {
+        margin-right: 55px;
+        position: relative;
+        height: 50px;
+        margin-bottom: 15px;
+
+        .recipient-select-container {
+            width: 100%;
+        }
+
+        .bmr-file-container {
+            position: absolute;
+            right: -55px;
+            top: 0;
+        }
+    }
+    .comment-respond .comment-submit-btn {
+        text-align: center;
+    }
+}
+
+@include breakpoint(max-width 767px) {
+    //*****************************************
+    // SINGLE COMPLAINT
+    //*****************************************
+    .JAL #respond input#submit {
+        width: 100%;
+    }
+
+    #reply-to {
+        width: 100%;
+        margin: 0;
+    }
+
+    //*****************************************
+    // COMPLAINTS ARCHIVE
+    //*****************************************
+
+    //*****************************************
+    // COMPLAINT FORM
+    //*****************************************
+    .saveEars {
+        text-align : center;
+    }
+    .saveEars img {
+        float : none;
+    }
+    .saveEars .saveEarsText {
+        padding-left : 0;
+        text-align   : left;
+    }
+    .saveEars h4 {
+        text-align : center;
+    }
+    .bmrForm .theButton button {
+        width : 100%;
+    }
+    .complaint-form-buttons {
+        text-align: center;
+    }
+
+    .pull-left {
+        float: none
+    }
+
+}
+
+@include breakpoint(max-width 395px) {
+    //*****************************************
+    // SINGLE COMPLAINT
+    //*****************************************
+    .bmr-file-attach-text {
+        display: none;
+    }
+}

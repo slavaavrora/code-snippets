@@ -1,0 +1,86 @@
+.popular-topics-wrapper {
+    .popular-topics-heading {
+        color: #131313;
+        font: 13px GothamBold;
+        text-transform: uppercase;
+        margin: 25px 0;
+        padding: 0;
+    }
+    .popular-topics-container {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin: 0 -10px -15px;
+    }
+    .pt-item {
+        flex: 1 0 300px;
+        padding: 0 10px 15px;
+        box-sizing: border-box;
+    }
+    .pt-topic {
+        font: normal 15px GothamBold;
+        margin: 0 0 8px;
+
+        a {
+            color: #131313;
+            &:hover {
+                color: #00ace8;
+                text-decoration: none
+            }
+        }
+    }
+
+    .pt-meta {
+        font: 13px "Open Sans";
+        color: #aeaeae;
+        margin-bottom: 13px;
+
+        .pt-meta-item {
+            padding-right: 10px;
+            border-right: 1px solid #f1f2f2;
+        }
+        .pt-meta-item:last-child {
+            padding-left: 10px;
+            border-right: none;
+        }
+    }
+
+    .pt-comment-inner {
+        display: flex;
+    }
+    .pt-comment-avatar {
+        flex: 0 0 45px;
+        img {
+            width: 36px;
+            height: 36px;
+            display: block;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: 50% 50%;
+            border-radius: 50%;
+        }
+        .pt-user-initials {
+            border-radius: 50%;
+            width: 36px;
+            height: 36px;
+            text-transform: uppercase;
+            user-select: none;
+            cursor: default;
+            font: 15px Gotham;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(to bottom, #58b4e6 0%, #2789ce 100%);
+        }
+    }
+    .pt-comment-content {
+        flex: 1 1 0;
+        font: 13px "Open Sans";
+    }
+    .pt-comment-author {
+        font-family: "Open Sans Semibold";
+    }
+
+
+}

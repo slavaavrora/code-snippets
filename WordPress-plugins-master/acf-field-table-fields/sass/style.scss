@@ -1,0 +1,19 @@
+.acf-table-fields {
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+    th,
+    td {
+        background: #fff;
+        border: 1px solid #e1e1e1;
+        padding: 10px;
+        text-align: center;
+    }
+    th {
+        text-align: left;
+    }
+    .top th {
+        text-align: center;
+    }
+}

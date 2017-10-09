@@ -1,0 +1,108 @@
+//.comment-tooltip {
+//    color       : #131313;
+//    padding     : 5px 0 0 5px;
+//    font        : normal 15px "Open Sans";
+//    box-sizing  : border-box;
+//    position    : absolute;
+//    z-index     : 999999;
+//    max-width   : 320px;
+//    background  : white;
+//    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+//    margin-top: -5px;
+//    display     : flex;
+//    align-items : center;
+//    justify-content: center;
+//
+//    &:before {
+//        content          : '';
+//        position         : absolute;
+//        width            : 0;
+//        height           : 0;
+//        box-sizing       : border-box;
+//        border: 7px solid white;
+//        border-color     : transparent transparent white white;
+//        transform-origin : 0 0;
+//    }
+//
+//    &.top:before {
+//        left        : 50%;
+//        transform   : rotate(-45deg);
+//        bottom: -12px;
+//        margin-left: -7px;
+//        box-shadow: -3px 3px 3px -2px rgba(0, 0, 0, 0.15)
+//    }
+//
+//    &.small {
+//        font: 13px Gotham;
+//        padding: 10px;
+//    }
+//}
+
+.bmr-tt-body.comments-tt {
+    font: 13px Gotham;
+    padding: 10px;
+
+    &.comments-tt-preview {
+        text-align: left;
+        min-width: 320px;
+        max-width: 500px;
+        padding: 5px;
+        font: normal 15px "Open Sans";
+    }
+
+    &.comments-tt-socials {
+        margin-top: 10px;
+
+        & ~ .bmr-tt-arrow {
+            margin-top: 10px;
+        }
+
+        a {
+            @extend %icomoon;
+            padding: 0 5px;
+            box-sizing: border-box;
+            display: inline-block;
+            font-size: 16px;
+
+            &::before {
+                display: inline-block;
+                width: 32px;
+                height: 32px;
+                line-height: 32px;
+                text-align: center;
+                color: #fff;
+            }
+            &:hover {
+                text-decoration: none;
+            }
+        }
+
+        [data-social="vk"] {
+            &::before {
+                background-color: #3b93bb;
+                content: "\e613";
+            }
+        }
+        [data-social="fb"] {
+            &::before {
+                background-color: #376cba;
+                content: "\e610";
+            }
+        }
+        [data-social="tw"] {
+            &::before {
+                background-color: #00aced;
+                content: "\e60f";
+            }
+        }
+        .comment-link {
+            &::before {
+                background-color: #d3d3d3;
+                content: "\e96e";
+            }
+        }
+    }
+}
+.bmr-tt-body.comments-tt, .bmr-tt-arrow.comments-tt {
+    transition: 500ms opacity ease-in-out;
+}

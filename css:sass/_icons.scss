@@ -1,0 +1,94 @@
+@font-face {
+    font-family: "icomoon";
+    src: url("../icons/fonts/icomoon.ttf?55irsz") format("truetype"),
+         url("../icons/fonts/icomoon.woff?55irsz") format("woff"),
+         url("../icons/fonts/icomoon.svg?55irsz#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+%icon {
+    display: inline-block; // for IE 10
+    flex: none;
+    font-family: "icomoon";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon::before {
+    @extend %icon;
+}
+
+$icons: (
+    credit-card: "\e900",
+    student: "\e901",
+    print: "\e902",
+    case: "\e903",
+    basket: "\e904",
+    trash: "\e905",
+    question-circle: "\e906",
+    pencil: "\e907",
+    clock: "\e908",
+    cloud: "\e909",
+    chain: "\e90a",
+    search: "\e90b",
+    power: "\e90c",
+    home: "\e90d",
+    calender: "\e90e",
+    check-circle: "\e90f",
+    close-circle: "\e910",
+    doc: "\e911",
+    paper-clip: "\e912",
+    place-mark: "\e913",
+    settings: "\e914",
+    star: "\e915",
+    menu: "\e916",
+    exclamation-circle: "\e917",
+    user: "\e918",
+    lock: "\e919",
+    people: "\e91a",
+    docs: "\e91b",
+    share: "\e91c",
+    mail: "\e91d",
+    info-circle: "\e91e",
+    arrow-down: "\e91f",
+    arrow-left: "\e920",
+    arrow-right: "\e921",
+    arrow-up: "\e922",
+    plus: "\e923",
+    cross: "\e924",
+    check: "\e925",
+    sort-asc: "\e926",
+    sort-desc: "\e927",
+    folder-full: "\e928",
+    folder-empty: "\e929",
+    finish: "\e92a",
+    locked-shield: "\e92b",
+    weighs: "\e92c",
+    id-card: "\e92d",
+    www: "\e92e",
+    university: "\e92f",
+    translation: "\e930",
+    spinner: "\e931",
+    stopwatch: "\e932",
+    shield: "\e933",
+    orders: "\e934",
+    facebook: "\e935",
+    linkedin: "\e936",
+    google-plus: "\e937",
+);
+
+@each $class, $code in $icons {
+    %icon-#{$class} {
+        content: $code;
+    }
+    .icon-#{$class}::before {
+        @extend %icon-#{$class};
+    }
+}

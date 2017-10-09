@@ -1,0 +1,87 @@
+@mixin absoluteFullSize {
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+%absoluteFullSize {
+    @include absoluteFullSize;
+}
+
+@mixin absoluteCenter {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+%absoluteCenter {
+    @include absoluteCenter;
+}
+
+@mixin flexCenter {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+%flexCenter {
+    @include flexCenter;
+}
+
+@mixin flexSpaceBetween {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+%flexSpaceBetween {
+    @include flexSpaceBetween;
+}
+
+@mixin flexAlignCenter {
+    align-items: center;
+    display: flex;
+}
+%flexAlignCenter {
+    @include flexAlignCenter;
+}
+
+@mixin inlineFlexCenter {
+    align-items: center;
+    display: inline-flex;
+    justify-content: center;
+}
+%inlineFlexCenter {
+    @include inlineFlexCenter;
+}
+
+@mixin imgFullSize {
+    display: block;
+    max-height: 100%;
+    max-width: 100%;
+
+    .msIE & {
+        width: 100%; // for IE
+    }
+}
+%imgFullSize {
+    @include imgFullSize;
+}
+
+@mixin resetControlDefaultAppearance {
+    appearance: none;
+    border-radius: 0;
+    box-shadow: none;
+    outline: none;
+}
+%resetControlDefaultAppearance {
+    @include resetControlDefaultAppearance;
+}
+
+@keyframes rotate360 {
+    100% {
+        transform: rotate3d(0, 0, 1, 360deg);
+    }
+}
+%spinnerAnimation {
+    animation: rotate360 1s linear infinite;
+}

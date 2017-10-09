@@ -1,0 +1,96 @@
+@font-face {
+    font-family: "icomoon";
+    src: url("../icons/fonts/icomoon.ttf?55irsz") format("truetype"),
+         url("../icons/fonts/icomoon.woff?55irsz") format("woff"),
+         url("../icons/fonts/icomoon.svg?55irsz#icomoon") format("svg");
+    font-weight: normal;
+    font-style: normal;
+}
+
+%icon {
+    display: inline-block; // for IE 10
+    flex: none;
+    font-family: "icomoon";
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    line-height: 1;
+    speak: none;
+    text-transform: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon::before {
+    @extend %icon;
+}
+
+$icons: (
+    email: "\e900",
+    sort-asc: "\e901",
+    sort-desc: "\e902",
+    folder-full: "\e903",
+    folder-empty: "\e904",
+    finish: "\e905",
+    locked-shield: "\e906",
+    weighs: "\e907",
+    id-card: "\e908",
+    www: "\e909",
+    university: "\e90a",
+    translation: "\e90b",
+    reload: "\e90c",
+    credit-card: "\e90d",
+    student: "\e90e",
+    print: "\e90f",
+    case: "\e910",
+    basket: "\e911",
+    trash: "\e912",
+    question-circle: "\e913",
+    pencil: "\e914",
+    clock: "\e915",
+    cloud: "\e916",
+    chain: "\e917",
+    search: "\e918",
+    power: "\e919",
+    home: "\e91a",
+    calender: "\e91b",
+    check-circle: "\e91c",
+    close-circle: "\e91d",
+    doc: "\e91e",
+    paper-clip: "\e91f",
+    place-mark: "\e920",
+    settings: "\e921",
+    star: "\e922",
+    menu: "\e923",
+    exclamation-circle: "\e924",
+    user: "\e925",
+    lock: "\e926",
+    people: "\e927",
+    docs: "\e928",
+    share: "\e929",
+    mail: "\e92a",
+    info-circle: "\e92b",
+    arrow-down: "\e92c",
+    arrow-left: "\e92d",
+    arrow-right: "\e92e",
+    arrow-up: "\e92f",
+    plus: "\e930",
+    cross: "\e931",
+    check: "\e932",
+    google-plus: "\e933",
+    spinner: "\e934",
+    stopwatch: "\e935",
+    shield: "\e936",
+    orders: "\e937",
+    facebook: "\e938",
+    linkedin: "\e939",
+);
+
+@each $class, $code in $icons {
+    %icon-#{$class} {
+        content: $code;
+    }
+    .icon-#{$class}::before {
+        @extend %icon-#{$class};
+    }
+}

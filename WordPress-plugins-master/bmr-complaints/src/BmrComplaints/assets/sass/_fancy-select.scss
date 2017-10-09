@@ -1,0 +1,204 @@
+.complaint-type-dropdown {
+    min-width: 200px;
+}
+.complaint-bookmaker-dropdown {
+    min-width: 181px;
+}
+
+.complaint-type-dropdown, .complaint-bookmaker-dropdown {
+    float: left;
+}
+/*
+
+div.filter-dropdown {
+    position : relative;
+    width    : 100%;
+}
+div.filter-dropdown.disabled {
+    opacity: 0.5;
+}
+div.filter-dropdown select:focus + div.trigger {
+
+}
+div.filter-dropdown select:focus + div.trigger.open {
+    box-shadow: none;
+}
+div.filter-dropdown div.trigger {
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 0 34px 0 15px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-transform: none;
+    text-overflow: ellipsis;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+    background: transparent;
+    border: none;
+    color: #fff;
+    height: 45px;
+    line-height: 45px;
+    text-align: left;
+    transition: all 240ms ease-out;
+    z-index: 60;
+    display: inline-block;
+    width: 100%;
+
+    &:hover {
+        background: $dark-blue;
+    }
+}
+
+div.filter-dropdown div.trigger:after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    margin-top: -3px;
+    right: 10px;
+
+    //triangle
+    width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-top: 7px solid rgba(255,255,255,1);
+}
+
+div.filter-dropdown div.trigger.open {
+    background: $dark-blue;
+    color: #fff;
+
+    &:after {
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 8px solid rgba(255,255,255,1);
+        border-top: 0;
+    }
+}
+
+div.filter-dropdown ul.options {
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0;
+    position: absolute;f
+    padding: 0;
+    top: $select-list-offset;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 50;
+    max-height: 400px;
+    overflow: auto;
+    background: $blue;
+    min-width: 100%;
+    width: 100%;
+    //border: 1px solid $dark-blue;
+    transition: opacity 300ms ease-out, top 300ms ease-out, visibility 300ms ease-out;
+}
+
+div.filter-dropdown ul.options.open {
+    visibility: visible;
+    top: $select-list-offset;
+    opacity: 1;
+    z-index: 150;
+
+    transition: opacity 300ms ease-out, top 300ms ease-out;
+    overflow-x:hidden;
+}
+
+div.filter-dropdown ul.options.overflowing {
+    top: auto;
+    bottom: $select-list-offset;
+    transition: opacity 300ms ease-out, bottom 300ms ease-out, visibility 300ms ease-out;
+}
+
+div.filter-dropdown ul.options.overflowing.open {
+    top: auto;
+    bottom: $select-list-offset;
+    transition: opacity 300ms ease-out, bottom 300ms ease-out;
+}
+
+div.filter-dropdown ul.options li {
+    border-top: 1px solid $sky;
+    padding: 14px 20px;
+    color: $sky;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+    cursor: pointer;
+    word-wrap: break-word;
+    line-height: 1;
+    transition: all 150ms ease-out;
+}
+
+div.filter-dropdown ul.options li.selected {
+    background: $dark-blue;
+    color: #fff;
+}
+
+div.filter-dropdown ul.options li.hover {
+    background: $dark-blue;
+    color: #fff;
+}*/
+
+//Android
+select.filter-dropdown {
+    position: relative;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 0 10px 0 10px;
+    white-space: nowrap;
+    text-transform: none;
+    text-overflow: ellipsis;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+    background: transparent;
+    border: none;
+    color: #fff;
+    height: 44px;
+    width:auto;
+    outline: none;
+    line-height: 44px;
+    text-align: center;
+    transition: all 240ms ease-out;
+    z-index: 60;
+    display: inline-block;
+    float: left;
+//    min-width: 100%;
+
+    &:hover {
+        background: $dark-blue;
+    }
+}
+
+
+@media all and (max-width: 521px) {
+    div.filter-dropdown div.trigger {
+        font-size: 16px;
+        padding: 0 34px 0 6px;
+        width: 100%;
+        text-align: center;
+    }
+    .complaint-type-dropdown, .complaint-bookmaker-dropdown {
+        width: 100%;
+        text-align: center;
+        float: none;
+        box-sizing: border-box;
+        padding: 0px;
+    }
+    .complaint-type-dropdown {
+        border-bottom: 1px solid #d0d0d0;
+    }
+    select.filter-dropdown {
+        float: none;
+        width: 100%;
+        font-size: 16px;
+    }
+}

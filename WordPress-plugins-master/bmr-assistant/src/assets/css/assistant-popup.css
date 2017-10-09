@@ -1,0 +1,179 @@
+/* line 9, ../sass/assistant-popup.scss */
+.assistant-popup {
+  width: 350px;
+  background: #4db6ac;
+  color: #fff;
+  padding-bottom: 60px;
+  box-sizing: border-box;
+  position: fixed;
+  bottom: 0;
+  left: 100%;
+  display: none;
+  transition: -webkit-transform 300ms linear, opacity 300ms linear;
+  transition: transform 300ms linear, opacity 300ms linear;
+  opacity: .3;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  -webkit-perspective: 1000px;
+          perspective: 1000px;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  z-index: 999999;
+}
+/* line 26, ../sass/assistant-popup.scss */
+.assistant-popup.is-open {
+  opacity: 1;
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+}
+/* line 30, ../sass/assistant-popup.scss */
+.assistant-popup .assistant-popup-content {
+  height: 100%;
+  padding: 20px 13px;
+  box-sizing: border-box;
+}
+/* line 35, ../sass/assistant-popup.scss */
+.assistant-popup .assistant-popup-heading {
+  margin-top: 0;
+  font: normal 16px GothamBold;
+  padding-right: 50px;
+  box-sizing: border-box;
+  text-transform: uppercase;
+  position: relative;
+}
+/* line 43, ../sass/assistant-popup.scss */
+.assistant-popup .assistant-popup-heading:after {
+  content: '';
+  display: block;
+  height: 1px;
+  width: 100px;
+  background: #f6cb51;
+  margin: 12px 0;
+}
+/* line 52, ../sass/assistant-popup.scss */
+.assistant-popup .assistant-popup-close {
+  position: absolute;
+  top: -4px;
+  right: 0;
+  cursor: pointer;
+  font-size: 18px;
+  width: 50px;
+  height: 50px;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.5);
+}
+/* line 63, ../sass/assistant-popup.scss */
+.assistant-popup .assistant-popup-text {
+  font: normal 15px Gotham;
+  margin-bottom: 12px;
+}
+/* line 67, ../sass/assistant-popup.scss */
+.assistant-popup .assistant-popup-img {
+  text-align: center;
+}
+/* line 70, ../sass/assistant-popup.scss */
+.assistant-popup .assistant-popup-button {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  font-size: 18px;
+  background-color: #ff924a;
+  width: 100%;
+  text-align: center;
+}
+/* line 79, ../sass/assistant-popup.scss */
+.assistant-popup .assistant-popup-button:hover {
+  background-color: #ffb17d;
+}
+/* line 82, ../sass/assistant-popup.scss */
+.assistant-popup .assistant-popup-button:hover:active {
+  background-color: #fd6400;
+}
+@media all and (max-width: 340px) {
+  /* line 9, ../sass/assistant-popup.scss */
+  .assistant-popup {
+    width: 320px;
+  }
+}
+
+/* line 93, ../sass/assistant-popup.scss */
+.assistant-is-appearing .page-content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* line 101, ../sass/assistant-popup.scss */
+.assistant-is-appearing.admin-bar .page-content {
+  margin-top: 32px;
+}
+
+@media all and (max-height: 410px), all and (max-width: 500px) {
+  /* line 106, ../sass/assistant-popup.scss */
+  .popup-wrap {
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    height: 100%;
+    z-index: 999999;
+  }
+
+  /* line 116, ../sass/assistant-popup.scss */
+  .assistant-popup-opened {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+  }
+  /* line 124, ../sass/assistant-popup.scss */
+  .assistant-popup-opened:before {
+    content: '';
+    display: block;
+    z-index: 999998;
+    width: 100%;
+    height: 100%;
+    background: red;
+    background: rgba(0, 0, 0, 0.5);
+  }
+  /* line 134, ../sass/assistant-popup.scss */
+  .assistant-popup-opened.admin-bar {
+    margin-top: -46px;
+  }
+}
+@media all and (max-width: 500px) {
+  /* line 141, ../sass/assistant-popup.scss */
+  .assistant-popup {
+    left: 50%;
+    top: 50%;
+    -webkit-transform: translate3d(-50%, 100%, 0);
+            transform: translate3d(-50%, 100%, 0);
+    position: relative;
+  }
+  /* line 147, ../sass/assistant-popup.scss */
+  .assistant-popup.is-open {
+    -webkit-transform: translate3d(-50%, -50%, 0);
+            transform: translate3d(-50%, -50%, 0);
+  }
+}
+@media all and (max-height: 410px) {
+  /* line 154, ../sass/assistant-popup.scss */
+  .assistant-popup {
+    left: 50%;
+    top: auto;
+    -webkit-transform: translate3d(-50%, 100%, 0);
+            transform: translate3d(-50%, 100%, 0);
+    position: relative;
+  }
+  /* line 160, ../sass/assistant-popup.scss */
+  .assistant-popup.is-open {
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
+  }
+}

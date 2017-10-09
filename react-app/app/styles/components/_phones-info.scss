@@ -1,0 +1,22 @@
+/**
+ *  style UserPhone component
+ */
+
+.phones-info {
+  color: $grey;
+  font-size: 14px;
+  list-style: none;
+  font-family: 'Lato', sans-serif;
+  margin-bottom: 10px;
+  font-weight: 700;
+
+  i{
+    color: $light-grey;
+    margin-right: 15px;
+    font-size: 20px;
+  }
+}
+ul{
+  margin: 0;
+  padding: 0;
+}

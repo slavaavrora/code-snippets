@@ -1,0 +1,30 @@
+ [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "subscribe": "Father",
+      "emails": ["john@example.com","john@example.com","john@example.com","john@example.com"],
+      "phones": ["+52 123-123-123", "+52 123-123-127", "+52 123-123-129", "+52 123-123-128"],
+      "isClickable": false,
+      "isCardEditDelete": false
+    },
+    {
+      "id": 2,
+      "name": "Andrew Still",
+      "subscribe": "Father",
+      "emails": ["Andrew@example.com","Andrew@example.com"],
+      "phones": ["+52 96-487-2323-123", "+52 96-487-2323-123"],
+      "isClickable": true,
+      "isCardEditDelete": false
+    },
+    {
+      "id": 3,
+      "name": "Donald Weirder",
+      "subscribe": "Father",
+      "emails": ["Donald@example.com","Donald2@example.com","Donald3@example.com"],
+      "phones": ["+52 89-789-123-123"],
+      "isClickable": false,
+      "isCardEditDelete": true
+    }
+  ]
+

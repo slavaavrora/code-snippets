@@ -1,0 +1,106 @@
+[data-current-page="landing"] {
+    .container-assistant-menu,
+    .assistant-header,
+    .assistant-footer,
+    span.social_links_share,
+    .page-header-breadcrumbs-crumb:last-of-type {
+        display: none;
+    }
+
+    .social_links_share:last-of-type {
+        margin-right: 0 !important;
+    }
+
+    .assistant-landing {
+        text-align: center;
+
+        p {
+            max-width : 76%;
+            margin: 0 auto;
+        }
+        .help-the-rest {
+            font: normal 15px "Open Sans Semibold";
+            margin-bottom: 13px;
+        }
+
+        &:after {
+            content: '';
+            display : block;
+            margin: 0 auto;
+            width: 922px;
+            height: 256px;
+            background: image-url('assistant-landing-bg.png');
+            background-position: 50% 0;
+            background-repeat: no-repeat;
+        }
+    }
+    .button-default {
+        $bg: #ff924a;
+        margin: 22px 0;
+        width: 360px;
+        background-color: $bg;
+
+        &:hover {
+            background-color: lighten($bg, 10%);
+        }
+    }
+
+    @media all and (max-width: 1024px) {
+        .assistant-landing:after {
+            width: 700px;
+        }
+    }
+
+    @media all and (max-width: 950px) {
+        .assistant-landing {
+            p {
+                max-width : 100%;
+            }
+            &:after {
+                background-image: image-url('assistant-landing-bg-mobile.png');
+                width: 100%;
+                margin: 15px -25px 0;
+                display: inline-block;
+            }
+        }
+        .button-default {
+            width: 320px;
+        }
+
+        #assistant-content {
+            margin-bottom: 0 !important;
+        }
+    }
+
+    @media all and (max-width: 510px) {
+        .social_links_share {
+            margin-right: 0 !important;
+            width: 49%;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+
+            &:nth-child(odd) {
+                text-align: left;
+                padding-left: 10px;
+            }
+            &:nth-child(even) {
+                text-align: right;
+                padding-right: 10px;
+            }
+        }
+    }
+
+    @media all and (max-width: 500px) {
+        p {
+            width: 95%;
+        }
+        .button-default {
+            width: 310px;
+        }
+        .assistant-landing {
+            &:after {
+                margin: 15px 0 0;
+            }
+        }
+    }
+}

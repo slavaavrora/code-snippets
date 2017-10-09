@@ -1,0 +1,175 @@
+.assistant-results {
+    /* RESULTS CRITERIA LIST */
+
+    $matched: #43a047;
+    $unmatched: #f44336;
+
+    .results-footer {
+        background: #fff;
+        padding: 10px 20px;
+        box-sizing: border-box;
+        margin-top: 38px;
+        display: flex;
+        flex-wrap : wrap;
+
+        > .title {
+            font: normal 15px GothamBold;
+            color: #131313;
+            text-transform : uppercase;
+            flex: auto;
+        }
+
+        .again-btn {
+            white-space: nowrap;
+            flex: none;
+            padding: 0;
+            height: 44px;
+            line-height: 44px;
+            width: 190px;
+            margin: 0 0 0 10px;
+            text-align: center;
+        }
+    }
+
+    .criteria-list {
+        padding-top: 5px;
+        margin: 0 -10px;
+        display: flex;
+        align-content: flex-start;
+        flex-wrap : wrap;
+        width: 100%;
+    }
+
+    .criteria-item {
+        width: 91px;
+        height: 91px;
+        margin-bottom: 10px;
+        flex: 0 0 auto;
+        padding: 0 10px;
+
+        &.is-matched {
+            img {
+                filter: none; /* Applies to FF + IE */
+                -webkit-filter: grayscale(0);
+            }
+            .icon {
+                color: $matched;
+            }
+        }
+
+        img {
+            width: 22px;
+            height: auto;
+
+            filter: url("data:image/svg+xml;utf8,&lt;svg xmlns=\'http://www.w3.org/2000/svg\'&gt;&lt;filter id=\'grayscale\'&gt;&lt;feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/&gt;&lt;/filter&gt;&lt;/svg&gt;#grayscale"); /* Firefox 10+, Firefox on Android */
+            filter: gray; /* IE6-9 */
+            -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
+        }
+        &[data-criteria*="payment="] img {
+            width: 40px;
+        }
+        .icon {
+            color: $unmatched;
+            font-family: 'GothamBold';
+            i {
+                font-size: 32px;
+            }
+        }
+        .text {
+            font-family: 'Open Sans Italic';
+            margin-top: 5px;
+            color: #131313;
+            font-size: 12px;
+            line-height: 16px;
+            padding: 0 10px;
+            box-sizing: border-box;
+            word-wrap: break-word;
+        }
+
+
+        .status-icon {
+            font-size: 16px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            display: inline-block;
+
+            font-family: 'icomoon';
+            speak: none;
+            font-style: normal;
+            font-weight: normal;
+            font-variant: normal;
+            text-transform: none;
+            line-height: 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+
+            &:before {
+                color: $unmatched;
+                content: "\e62d";
+            }
+        }
+        &.is-matched .status-icon:before {
+            color: $matched;
+            content: "\e62f";
+        }
+
+        .delete-btn {
+            position: absolute;
+            top: -5px;
+            right: -5px;
+            cursor: pointer;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            text-align: center;
+            font-size: 0;
+            background-color: #e56c69;
+
+            &:before {
+                content: "\e62d";
+                color: #fff;
+                font-size: 12px;
+                font-family: 'icomoon';
+                speak: none;
+                font-style: normal;
+                font-weight: normal;
+                font-variant: normal;
+                text-transform: none;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                line-height: 16px;
+            }
+        }
+    }
+
+    .item-wrap {
+        position: relative;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        * {
+            flex: 0 0 auto;
+        }
+    }
+
+    @media all and (breakpoint('tablet-portrait')) {
+        .results-footer .again-btn {
+            order: 3;
+            margin: 0 auto;
+        }
+    }
+
+    @media all and (breakpoint('mobile')) {
+        .results-footer .again-btn {
+            width: 95%;
+        }
+    }
+}
+

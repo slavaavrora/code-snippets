@@ -1,0 +1,92 @@
+.assistant-time-content {
+    .container {
+        display: flex;
+        justify-content: space-between;
+        width: 75%;
+        margin: 25px auto;
+    }
+    .checkbox-group {
+        margin-bottom: 35px;
+    }
+    .item-container {
+        position: relative;
+        .guy {
+            position: absolute;
+            width: 112px;
+            height: 147px;
+            display: none;
+            &.first {
+                bottom: 23px;
+                left: 5%;
+            }
+            &.second {
+                left: 0;
+                right: 6%;
+                margin: 0 auto;
+                bottom: 23px;
+            }
+            &.third {
+                bottom: 77px;
+                right: 21%;
+            }
+            &.show {
+                display: block;
+            }
+        }
+    }
+    @media screen and (max-width: 1180px) {
+        .item-container {
+            .guy {
+                &.first , &.second {
+                    bottom: 7%;
+                }
+                &.third {
+                    right: 20%;
+                    bottom: 25%;
+                }
+            }
+        }
+    }
+    @media all and (breakpoint('tablet-landscape')) {
+        .item-container {
+            .guy {
+                &.first {
+                    bottom: 7%;
+                }
+                &.second {
+                    bottom: 7%;
+                }
+                &.third {
+                    right: 16%;
+                    bottom: 28%;
+                    width: 130px;
+                }
+            }
+        }
+    }
+    @media all and (breakpoint('tablet-portrait')) {
+        .container {
+            width: 85%;
+            flex-wrap : wrap;
+        }
+        .item-container .guy.third {
+            bottom: 10%;
+        }
+    }
+    @media all and (breakpoint('mobile')) {
+        .item-container {
+            .guy {
+                &.first {
+                    left: 1%;
+                    bottom: 3%;
+                }
+                &.second {
+                    bottom: 3%;
+                }
+                &.third {
+                    right: 2%;
+                }
+            }
+        }
+    }
+}

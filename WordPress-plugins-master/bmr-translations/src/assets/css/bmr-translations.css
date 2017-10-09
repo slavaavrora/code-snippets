@@ -1,0 +1,107 @@
+/* line 2, ../sass/bmr-translations.scss */
+.translations-page form {
+  padding: 0;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+/* line 9, ../sass/bmr-translations.scss */
+.translations-page .translation-progress {
+  text-align: center;
+}
+/* line 13, ../sass/bmr-translations.scss */
+.translations-page .original {
+  padding-left: 0;
+  -webkit-flex: 1 0 46%;
+      -ms-flex: 1 0 46%;
+          flex: 1 0 46%;
+}
+/* line 17, ../sass/bmr-translations.scss */
+.translations-page .translation {
+  -webkit-flex: 1 0 46%;
+      -ms-flex: 1 0 46%;
+          flex: 1 0 46%;
+}
+/* line 20, ../sass/bmr-translations.scss */
+.translations-page .spinner-container {
+  -webkit-flex: 0 0 20px;
+      -ms-flex: 0 0 20px;
+          flex: 0 0 20px;
+  padding: 10px 0 0 !important;
+}
+/* line 25, ../sass/bmr-translations.scss */
+.translations-page div {
+  box-sizing: border-box;
+  padding: 10px 0 20px 0;
+}
+/* line 29, ../sass/bmr-translations.scss */
+.translations-page textarea {
+  -webkit-flex: 0 0 48%;
+      -ms-flex: 0 0 48%;
+          flex: 0 0 48%;
+  box-sizing: border-box;
+  padding: 20px;
+  min-height: 100px;
+}
+/* line 37, ../sass/bmr-translations.scss */
+.translations-page .notes {
+  margin-top: 10px;
+  padding: 10px;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+  border: 1px dashed grey;
+}
+/* line 43, ../sass/bmr-translations.scss */
+.translations-page .helper {
+  padding-top: 0;
+  margin-bottom: 10px;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+  border-bottom: 1px dashed rgba(121, 121, 121, 0.41);
+}
+/* line 49, ../sass/bmr-translations.scss */
+.translations-page .error-text {
+  color: red;
+}
+/* line 52, ../sass/bmr-translations.scss */
+.translations-page .btn-container {
+  background: rgba(255, 255, 255, 0.7);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  z-index: 999;
+}
+/* line 62, ../sass/bmr-translations.scss */
+.translations-page .button-default {
+  text-transform: none;
+  width: 100%;
+  padding: 15px 45px;
+  box-sizing: border-box;
+  height: 100%;
+}
+/* line 70, ../sass/bmr-translations.scss */
+.translations-page .icon-spinner {
+  color: #3b86c4;
+  display: none;
+}
+/* line 74, ../sass/bmr-translations.scss */
+.translations-page .icon-loop {
+  display: none;
+}
+/* line 78, ../sass/bmr-translations.scss */
+.translations-page #lang-select {
+  font-family: "Gotham", sans-serif;
+  padding: 10px;
+  height: auto;
+}

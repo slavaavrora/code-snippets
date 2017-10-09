@@ -1,0 +1,255 @@
+.assistant-results {
+    margin: 11px -5px 0;
+    display: flex;
+    flex-wrap : wrap;
+
+    .heading-middle {
+        width: 100%;
+        text-align: center;
+        margin: 20px 0 30px;
+    }
+    .item {
+        flex: 0 0 auto;
+        display: flex;
+        flex-direction : column;
+        width: 25%;
+        padding: 0 5px;
+        margin-bottom: 10px;
+        box-sizing: border-box;
+        font-family: 'Gotham', sans-serif;
+    }
+    .item:nth-of-type(-n+3) {
+        .item-head .percent {
+            color: #ff924a;
+        }
+    }
+    .item-wrap {
+        position: relative;
+        flex: 1 1 auto;
+        padding: 20px 15px 15px;
+        background-color: #fff;
+        box-sizing: border-box;
+    }
+    .title {
+        font: normal 15px GothamBold;
+    }
+    .item-head {
+        position: relative;
+        margin-bottom: 10px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .title {
+            flex: 0 0 100%;
+            display: flex;
+            align-items: flex-end;
+            color: #131313;
+            word-wrap: break-word;
+            padding-right: 80px;
+            min-height : 25px;
+            box-sizing: border-box;
+        }
+        .percent {
+            position: absolute;
+            right: 0;
+            top: 0;
+            font: normal 30px Gotham;
+            width: 80px;
+            text-align: right;
+        }
+        .logo {
+            height: 50px;
+            margin: 25px 0 15px;
+            width: 100%;
+            flex: auto;
+            text-align: center;
+            img {
+                max-height: 100%;
+                height: auto;
+                width: auto;
+                display: inline-block;
+            }
+        }
+    }
+    .no-logo .item-head {
+        .percent {
+            order: 1;
+            position: static;
+            width: 100%;
+        }
+        .title {
+            height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            order: 2;
+            padding-right: 0;
+        }
+    }
+    .rating {
+
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        margin-bottom : 10px;
+
+        .title {
+            color: #292929;
+            text-transform: uppercase;
+        }
+        .rate {
+            i {
+                color: #ffc400;
+            }
+        }
+        .point {
+            font: normal 18px GothamMed;
+            color: #292929;
+        }
+    }
+    .item-buttons a, .item-buttons span {
+        width: 100%;
+        text-transform: uppercase;
+        color: #fff;
+        padding: 16px 5px;
+        box-sizing: border-box;
+        display: flex;
+        align-items : center;
+        justify-content : center;
+        text-decoration: none;
+        font: 15px 'GothamBold';
+        position: relative;
+
+        &:hover {
+            &:before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(255, 255, 255, .25);
+            }
+        }
+        &.review {
+            background-color: #131313;
+            margin-bottom: 13px;
+        }
+        &.bet {
+            background-color: #ff924a;
+        }
+
+        &.is-disabled {
+            cursor: default;
+            user-select: none;
+            background-color : #bababa;
+
+            &:hover:before {
+                content: normal;
+            }
+        }
+    }
+
+    @media all and (max-width: 1024px) {
+        .item {
+            width: 33.33%;
+        }
+    }
+
+    @media all and (max-width: 950px) {
+        .item {
+            width: 50%;
+        }
+    }
+
+    @media all and (max-width : 700px)
+    {
+        .item {
+            width: 100%;
+        }
+        .item-head {
+            flex-wrap : nowrap;
+            align-items: center;
+
+            .title {
+                order: 1 !important;
+                flex: 0 0 auto;
+                width: 25%;
+                min-height: 0;
+                padding-right: 0;
+            }
+            .percent {
+                order: 3;
+                position: static;
+                flex: 0 0 auto;
+                width: 25%;
+            }
+            .logo {
+                margin-top: 0;
+                order: 2;
+                flex: 1 1 auto;
+            }
+        }
+        .no-logo .item-head {
+            margin-bottom: 20px;
+
+            .title {
+                height: auto;
+                padding-right: 80px;
+                width: 100%;
+                justify-content: flex-start;
+            }
+            .percent {
+                position: absolute;
+            }
+        }
+        .rating {
+            justify-content: space-between;
+
+            .title {
+                text-align: left;
+                padding-right: 0;
+                width: 25%;
+                flex: 0 0 auto;
+            }
+            .rate {
+                padding-right: 0;
+                flex: 1 1 auto;
+                text-align: center;
+
+                i {
+                    font-size: 23px;
+                }
+            }
+            .point {
+                text-align: right;
+                width: 25%;
+                flex: 0 0 auto;
+            }
+        }
+        .item-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+            a, span {
+                width: 49%;
+
+                &.review {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+
+    @media all and (breakpoint('mobile')) {
+        .item-wrap {
+            padding: 20px 5px 15px;
+        }
+        .item-buttons a, .item-buttons span {
+            font-size: 13px;
+        }
+    }
+
+}

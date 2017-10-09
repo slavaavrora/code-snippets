@@ -1,0 +1,130 @@
+%icomoon {
+    font-family: 'icomoon';
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.screen-reader-text {
+    position: absolute;
+    margin: -1px;
+    padding: 0;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    border: 0;
+    word-wrap: normal!important;
+}
+
+%button-hover {
+    position: relative;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(255,255,255, 0);
+        width: 100%;
+        height: 100%;
+        transition: background-color 200ms;
+    }
+    &:hover::after {
+        background-color: rgba(255,255,255, .30);
+    }
+}
+
+.comment-avatar {
+    flex: 0 0 60px;
+
+    %round {
+        width: 50px;
+        height: 50px;
+        display: block;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+        border-radius: 50%;
+    }
+
+    img {
+        @extend %round;
+    }
+    .comment-user-initials {
+        @extend %round;
+        text-transform: uppercase;
+        user-select: none;
+        cursor: default;
+        font: 18px Gotham;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(to bottom, #58b4e6 0%, #2789ce 100%);
+    }
+    .plus {
+        display: block;
+        color: #139be2;
+        font-size: 38px;
+        margin-top: 5px;
+        cursor: pointer;
+    }
+
+    .sub-comments-list &,
+    .children &,
+    .comment-preview &
+    {
+        flex: 0 0 45px;
+
+        %round {
+            width: 36px;
+            height: 36px;
+        }
+        .comment-user-initials {
+            font-size: 15px;
+        }
+    }
+}
+
+.load-more-btn {
+    margin-top: 10px;
+    height: 44px;
+    width: 100%;
+    appearance: none;
+    border: none;
+    background: #00ace8;
+    color: #fff;
+    font: 15px GothamBold;
+    text-transform: uppercase;
+    text-align: center;
+
+    @extend %button-hover;
+
+    &.flash {
+        animation-duration: 2.5s;
+    }
+}
+
+.comments-native-pagination {
+    display: none;
+}
+
+@media all and (max-width: 500px) {
+    .comment-avatar {
+        flex: 0 0 45px;
+
+        %round {
+            width: 36px;
+            height: 36px;
+        }
+        .comment-user-initials {
+            font-size: 15px;
+        }
+    }
+}

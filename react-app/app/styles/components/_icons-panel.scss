@@ -1,0 +1,34 @@
+/**
+ *  style ClickIconPanel component
+ */
+
+.icons-edit-delete {
+  position: absolute;
+  right: 2%;
+  font-size: 14px;
+  font-weight: 700;
+  color: $grey;
+  display: inline-flex;
+  i:first-child{
+    margin-right: 8px;
+  }
+  i{
+    margin-right: 0;
+    font-size: 25px;
+  }
+  i.zmdi-edit{
+    margin-right: 17px;
+  }
+}
+.icon-clicable {
+  position: absolute;
+  right: 0;
+  margin-right: 10px;
+  top: 50%;
+  font-size: 25px;
+  color: $grey;
+  transform: translateY(-50%);
+  i {
+    font-size: 37px;
+  }
+}

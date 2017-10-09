@@ -1,0 +1,319 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    color: $mainTextColor;
+    font: 16px/1.4 Lato;
+    height: 100%;
+
+    &.msIE {
+        display: flex; // for IE
+    }
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    min-width: $minPageWidth;
+
+    .msIE & {
+        width: 100%; // for IE
+    }
+}
+
+h1 {
+    font-family: "Lato Light";
+    font-size: 2.375rem;
+
+    @media all and (max-width: 480px) {
+        font-size: 2rem;
+    }
+}
+h2 {
+    font-family: "Lato Light";
+    font-size: 1.875rem;
+
+    @media all and (max-width: 480px) {
+        font-size: 1.6rem;
+    }
+}
+h3 {
+    font-size: 1.25rem;
+    font-weight: normal;
+}
+h2, h3 {
+    margin-bottom: .5em;
+}
+p, ol, ul {
+    margin-bottom: 1em;
+}
+ul, ol {
+    list-style: none;
+}
+ul > li {
+    padding-left: 1em;
+    position: relative;
+
+    &::before {
+        $size: .4em;
+
+        background: $primaryColor;
+        border-radius: 50%;
+        content: "";
+        height: $size;
+        left: 0;
+        position: absolute;
+        top: .5em;
+        width: $size;
+    }
+}
+ol {
+    counter-reset: ordered-list;
+
+    li {
+        counter-increment: ordered-list;
+        padding-left: 1.8em;
+        position: relative;
+
+        &::before {
+            content: counter(ordered-list) ".";
+            left: 0;
+            position: absolute;
+            top: 0;
+        }
+    }
+}
+input,
+textarea,
+select,
+select option {
+    //font: 1rem/1 Lato; // TODO: IE10 doesn't support font shorthand property with rem units
+    font-family: Lato;
+    font-size: 1rem;
+    line-height: 1;
+}
+.msIE img {
+    border: 0; // for IE 10
+}
+
+body {
+    background-image: url("../img/page-bg.png");
+
+    &::after {
+        @extend %absoluteFullSize;
+        background: rgba(#000, .5);
+        content: "";
+        left: 100%;
+        opacity: 0;
+        position: fixed;
+        transition: opacity $transitionDuration, left 0s $transitionDuration;
+        z-index: 10;
+    }
+    &.main-menu-opened,
+    &.smart-table-options-opened {
+        overflow: hidden;
+
+        &::after {
+            left: 0;
+            opacity: 1;
+            transition: opacity $transitionDuration;
+        }
+    }
+}
+
+.content-container {
+    margin: 0 auto;
+    max-width: $maxPageWidth;
+    width: 100%;
+}
+main {
+    display: flex;
+    flex: 1 0 auto;
+
+    .content-container {
+        display: flex;
+    }
+    .msIE & {
+        overflow: hidden; // for IE
+    }
+}
+
+.page-container {
+    display: flex;
+    flex: 1 1 auto; // 1 1 auto - for IE 10
+    justify-content: center;
+    overflow: hidden;
+}
+.page-content {
+    background: #fff;
+    flex: 1 1 auto;  // 1 1 auto - for IE 10
+    margin: 3rem 5rem;
+    padding: 1em 2em 2em;
+    width: 100%; // for IE
+
+    .no-items-block {
+        @extend %flexCenter;
+        flex-direction: column;
+        font-size: 2rem;
+        margin-top: 3em;
+        text-align: center;
+
+        &::before {
+            color: $primaryColor;
+            display: block; // for IE 10
+            font-size: 2em;
+            margin-bottom: .5em;
+        }
+    }
+
+    @media all and (max-width: 1600px) {
+        margin: 3rem;
+    }
+    @media all and (max-width: 1400px) {
+        margin: 2rem;
+    }
+    @media all and (max-width: 1200px) {
+        margin: 1rem;
+        padding: 1em 1em 2em;
+    }
+    @media all and (max-width: 1000px) {
+        margin: 0;
+    }
+    @media all and (max-width: 420px) {
+        padding: 1em .5em 1.5em;
+    }
+}
+
+.page-title {
+    display: flex;
+    margin-bottom: 2em;
+
+    .title-block {
+        flex: 1 1 auto; // 1 1 auto - for IE 10
+
+        h1 {
+            @media all and (max-width: 480px) {
+                text-align: center;
+            }
+        }
+    }
+    .buttons-block {
+        align-items: flex-end;
+        display: flex;
+        flex: none;
+        margin-right: -.5em;
+        margin-top: 1em;
+
+        .button {
+            margin: .2em .5em;
+        }
+
+        @media all and (max-width: 640px) {
+            flex: auto;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+        @media all and (max-width: 480px) {
+            justify-content: center;
+            margin-left: -.5em;
+            width: 100%;
+        }
+    }
+    .info {
+        color: $mediumTextColor;
+        font-size: .9rem;
+        padding-left: 2.5em;
+        position: relative;
+
+        &::before {
+            @extend %icon, %icon-info-circle;
+            color: $primaryColor;
+            font-size: 1.5rem;
+            left: 0;
+            position: absolute;
+        }
+    }
+
+    @media all and (max-width: 640px) {
+        flex-wrap: wrap;
+        margin-bottom: 1em;
+    }
+}
+
+.controls-block {
+    @extend %flexAlignCenter;
+    flex-wrap: wrap;
+    margin-bottom: 1em;
+
+    .buttons-block {
+        display: flex;
+        flex: auto;
+        flex-wrap: wrap;
+        justify-content: flex-end;
+
+        .button {
+            margin-top: 1em;
+
+            &:nth-child(n+2) {
+                margin-left: 1em;
+            }
+        }
+
+        @media all and (max-width: 640px) {
+            justify-content: center;
+        }
+    }
+}
+
+.centered-blocks-container {
+    @extend %flexCenter;
+    width: 100%;
+
+    .centered-blocks-wrapper {
+        display: flex;
+        max-width: 1200px;
+        width: 100%;
+
+        @media all and (max-width: 800px) {
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+    }
+    .centered-block {
+        background: #fff;
+        flex: 1 0 40%; // px for IE;
+        margin: 1rem;
+        width: 100%;
+
+        @media all and (max-width: 1000px) {
+            margin: .5rem;
+        }
+        @media all and (max-width: 800px) {
+            flex: 0 0 100%;
+            max-width: 500px;
+
+            &.info-block {
+                order: 1;
+            }
+        }
+    }
+}
+
+.form-item {
+    width: 100%;
+}
+
+.image-block {
+    margin: 2.5em 0;
+    text-align: center;
+
+    img {
+        @extend %imgFullSize;
+        box-shadow: 0 0 25px #ccc;
+        display: inline-block;
+    }
+}

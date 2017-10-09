@@ -1,0 +1,189 @@
+.assistant-player {
+    margin: 0 auto;
+    width: 95%;
+    display: flex;
+
+    .scroll-container {
+        display: inline-flex;
+        flex-wrap: nowrap;
+        flex-direction: column;
+        justify-content: space-between;
+        position: relative;
+        margin-right: 50px;
+        flex: none;
+
+        .point {
+            flex: 0 0 34px;
+            display: flex;
+            z-index: 1;
+            justify-content: flex-end;
+            align-items: center;
+            cursor: pointer;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+            user-select: none;
+
+            &:after {
+                content: '';
+                display: inline-block;
+                width: 34px;
+                height: 34px;
+                background: image-url('player/slider-elemens.svg') no-repeat;
+                margin-left: 40px;
+            }
+
+            &:nth-of-type(1) {
+                &:after {
+                    background-position: 0 0;
+                }
+            }
+            &:nth-of-type(2) {
+                &:after {
+                    background-position: 0 -61px;
+                }
+            }
+            &:nth-of-type(3) {
+                &:after {
+                    //background-position: 0 -106px;
+                    background-position: 0 -104px;
+                }
+            }
+        }
+        &:after {
+            content: '';
+            position: absolute;
+            top: 5px;
+            right: -3px;
+            background: image-url('player/slider-line.svg') repeat-y;
+            background-position: 0 0;
+            width: 34px;
+            height: 95%;
+        }
+
+        &:before {
+            content: '';
+            background: image-url('player/slider.svg') no-repeat;
+            width: 60px;
+            height: 58px;
+            z-index: 5;
+            position: absolute;
+            right: -9px;
+            top: 0;
+            transition: all .3s linear;
+            transform: translate3d(0,0,0);
+        }
+
+    }
+    &[data-position="expert"] {
+        .scroll-container:before {
+            top: 0;
+            margin-top: -15px;
+        }
+        .player-container img:nth-of-type(3) {
+            display: block;
+        }
+        .player-extra {
+            display: block;
+        }
+    }
+    &[data-position="amateur"] {
+        .scroll-container:before {
+            top: 50%;
+            margin-top: -25px;
+        }
+        .player-container img:nth-of-type(2) {
+            display: block;
+        }
+    }
+    &[data-position="beginner"] {
+        .scroll-container:before {
+            top: 100%;
+            margin-top: -45px;
+        }
+        .player-container img:nth-of-type(1) {
+            display: block;
+        }
+    }
+    .player-container {
+        flex: none;
+
+        img {
+            display: none;
+            height: 340px;
+        }
+    }
+    .player-extra {
+        display: none;
+        margin-left: 30px;
+        ul {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            li {
+                margin: 0 0 12px 0;
+            }
+        }
+    }
+
+    @media screen and (breakpoint('tablet-landscape')) {
+        width: 100%;
+
+        .player-container {
+            margin-left: 5px;
+        }
+        .scroll-container {
+            margin-right: 15px;
+
+            .point:after {
+                margin-left: 20px;
+            }
+        }
+    }
+    @media screen and (breakpoint('tablet-portrait')) {
+        flex-wrap : wrap;
+
+        .player-container img {
+            height: 300px;
+        }
+        .player-extra {
+            margin-top: 35px;
+            margin-left: 0;
+            flex: 0 0 100%;
+        }
+        .scroll-container {
+            min-height: 300px;
+            margin-right: 20px;
+
+            .point:after {
+                margin-left: 40px;
+            }
+        }
+    }
+    @media screen and (max-width: 736px) {
+    //@media screen and (breakpoint('mobile')) {
+        justify-content: space-around;
+        margin: 25px 0 0 5px;
+
+        .player-container {
+            margin-left: 0;
+
+            img {
+                height: 170px;
+            }
+        }
+        .player-extra input[type="text"] {
+            width: 95%;
+        }
+        .scroll-container {
+            min-height: 170px;
+            margin-right: 15px;
+
+            .point {
+                font-size: 14px;
+            }
+            .point:after {
+                margin-left: 20px;
+            }
+        }
+    }
+
+}

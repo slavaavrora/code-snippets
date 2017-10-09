@@ -1,0 +1,38 @@
+@import
+    "variables"
+    ,"compass/css3/appearance"
+    ,"compass/typography/text/force-wrap"
+    ,"mixins"
+    ,"comments"
+    ,"content"
+    ,"author-block"
+    ,"form"
+    ,"progressbar-anim"
+    ,"auth-form"
+    ,"fancy-select"
+    ,"posts-block"
+    ,"posts-block-media"
+    ,"media"
+;
+
+$use-bounceInLeft : true;
+$use-bounceInRight : true;
+$use-flash : true;
+$use-fadeIn : true;
+
+@import
+    // Animate.css (SASS Version)
+"animate/animate"
+;
+
+body {
+    -webkit-backface-visibility: hidden; // Addresses a small issue in webkit: http://bit.ly/NEdoDq
+}
+.animated {
+    @include animate-prefixer(animation-duration, $base-duration);
+    @include animate-prefixer(animation-fill-mode, both);
+
+    &.hinge {
+        @include animate-prefixer(animation-duration, $base-duration * 2);
+    }
+}

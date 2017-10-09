@@ -1,0 +1,188 @@
+<section class="page-content" ng-controller="OrdersSingleCtrl">
+    <div class="order-header">
+        <div class="organization-logo"><img ng-src="/organisations/getLogo/{{ order.destination.id }}" alt=""></div>
+        <div class="order-info">
+            <h1 class="order-title" translate translate-values="{id: order.public_id }">orders.single.pageTitle</h1>
+            <div class="order-status icon icon-info-circle">{{ 'orders.statuses.' + order.status | translate }}</div>
+        </div>
+    </div>
+
+    <div class="order-actions" ng-if="!order.fee.payment_ref">
+        <button type="button" class="button" ng-click="actions.pay()">
+            <i class="background"></i>
+            <span translate>orders.list.pay</span>
+        </button>
+        <button type="button" class="button white" ng-click="actions.delete()">
+            <i class="background"></i>
+            <span translate>orders.list.delete</span>
+        </button>
+    </div>
+
+    <div class="data-block collapse-block document-info-block">
+        <input id="order-info-block" class="collapse-block-input" type="checkbox" checked>
+        <label for="order-info-block" class="collapse-block-button" translate>orders.single.documentInfo.title</label>
+
+        <div class="collapse-block-data">
+            <div class="smart-table two-columns">
+                <div class="tbody">
+                    <div class="tr">
+                        <div class="th"><div translate>orders.single.documentInfo.orderId</div></div>
+                        <div class="td"><div ng-bind="order.public_id"></div></div>
+                    </div>
+                    <div class="tr">
+                        <div class="th"><div translate>orders.single.documentInfo.institution</div></div>
+                        <div class="td"><div ng-bind="order.destination.institution_name"></div></div>
+                    </div>
+                    <div class="tr">
+                        <div class="th"><div translate>orders.single.documentInfo.status</div></div>
+                        <div class="td"><div class="color-label" ng-class="actions.getStatusColor(order.status)" translate>{{ 'orders.statuses.' + order.status }}</div></div>
+                    </div>
+                    <div class="tr">
+                        <div class="th"><div translate>orders.single.documentInfo.received</div></div>
+                        <div class="td"><div>{{ order.date_received | date: dateFormat }}</div></div>
+                    </div>
+                    <div class="tr">
+                        <div class="th"><div translate>orders.single.documentInfo.address</div></div>
+                        <div class="td"><div>
+                            <p ng-bind="order.applicant.mailing_address.line_1"></p>
+                            <p ng-if="order.applicant.mailing_address.line_2" ng-bind="order.applicant.mailing_address.line_2"></p>
+                            <p ng-if="order.applicant.mailing_address.line_3" ng-bind="order.applicant.mailing_address.line_3"></p>
+                            <p ng-if="order.applicant.mailing_address.line_4" ng-bind="order.applicant.mailing_address.line_4"></p>
+                            <p>{{ order.applicant.mailing_address.city }}, {{ order.applicant.mailing_address.state }}, {{ order.applicant.mailing_address.country }}, {{ order.applicant.mailing_address.postcode }}</p>
+                        </div></div>
+                    </div>
+                    <div class="tr">
+                        <div class="th"><div translate>orders.single.documentInfo.email</div></div>
+                        <div class="td"><div ng-bind="order.applicant.email"></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="data-block collapse-block academic-history-block" smart-table-init="order.educational_history">
+        <input id="order-academic-history-block" class="collapse-block-input" type="checkbox">
+        <label for="order-academic-history-block" class="collapse-block-button" translate>orders.single.academicHistory.title</label>
+
+        <div class="collapse-block-data">
+            <div class="smart-table desktop-view">
+                <div class="thead">
+                    <div class="tr">
+                        <div class="th instruction" table-sort="institution_name"><div translate>orders.single.academicHistory.institution</div></div>
+                        <div class="th date" table-sort="year_from" table-sort-default="desc"><div translate>orders.single.academicHistory.from</div></div>
+                        <div class="th date" table-sort="year_to"><div translate>orders.single.academicHistory.to</div></div>
+                        <div class="th course" table-sort="displayed_course"><div translate>orders.single.academicHistory.course_award</div></div>
+                    </div>
+                </div>
+                <div class="tbody">
+                    <div class="tr" ng-repeat="history in $smartTableData">
+                        <div class="td instruction" table-sort="institution_name"><div ng-bind="history.institution_name"></div></div>
+                        <div class="td date" table-sort="year_from"><div ng-bind="history.year_from"></div></div>
+                        <div class="td date" table-sort="year_to"><div ng-bind="history.year_to"></div></div>
+                        <div class="td course" table-sort="displayed_course"><div ng-bind="history.displayed_course"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="smart-table mobile-view">
+                <div class="tbody" ng-repeat="history in $smartTableData">
+                    <div class="tr">
+                        <div class="th"><div translate>orders.single.academicHistory.institution</div></div>
+                        <div class="td"><div ng-bind="history.institution_name"></div></div>
+                    </div>
+                    <div class="tr">
+                        <div class="th"><div translate>orders.single.academicHistory.period</div></div>
+                        <div class="td"><div>{{ history.year_from }} - {{ history.year_to }}</div></div>
+                    </div>
+                    <div class="tr">
+                        <div class="th" translate>orders.single.academicHistory.course_award</div>
+                        <div class="td"><div ng-bind="history.displayed_course"></div></div>
+                    </div>
+                </div>
+            </div>
+
+            <div table-view-options></div>
+        </div>
+    </div>
+
+    <div class="data-block collapse-block documents-block" ng-if="order.status === 'COMPLETED' && order.documents.length > 0">
+        <input id="order-documents-block" class="collapse-block-input" type="checkbox">
+        <label for="order-documents-block" class="collapse-block-button" translate>orders.single.attachedDocuments.title</label>
+        <div class="collapse-block-data">
+            <div class="files-list">
+                <div class="file" ng-repeat="document in order.documents">
+                    <a ui-sref="documents.single({id: document.document_id})" class="title icon icon-doc">{{ document.document_name }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="data-block collapse-block events-block" smart-table-init="events">
+        <input id="order-events-block" class="collapse-block-input" type="checkbox">
+        <label for="order-events-block" class="collapse-block-button" translate>orders.single.events.title</label>
+
+        <div class="collapse-block-data">
+            <div table-filter="orders.single.events.filter" table-filter-fields="displayed_type, description, formatted_date" class="desktop-view"></div>
+
+            <div class="smart-table desktop-view">
+                <div class="thead">
+                    <div class="tr">
+                        <div class="th type" table-sort="displayed_type"><div translate>orders.single.events.type</div></div>
+                        <div class="th description" table-sort="description"><div translate>orders.single.events.description</div></div>
+                        <div class="th date" table-sort="event_date" table-sort-default="desc"><div translate>orders.single.events.date</div></div>
+                    </div>
+                </div>
+                <div class="tbody">
+                    <div class="tr" ng-repeat="event in $smartTableData">
+                        <div class="td type" table-sort="displayed_type"><div ng-bind="event.displayed_type"></div></div>
+                        <div class="td description" table-sort="description"><div ng-bind="event.description"></div></div>
+                        <div class="td date" table-sort="event_date"><div ng-bind="event.formatted_date"></div></div>
+                    </div>
+                    <div class="tr nodata" ng-hide="$smartTableData.length">
+                        <div class="td" translate>noMatches</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="smart-table mobile-view">
+                <div class="tbody" ng-repeat="event in $smartTableData">
+                    <div class="tr">
+                        <div class="th"><div translate>orders.single.events.type</div></div>
+                        <div class="td"><div ng-bind="event.displayed_type"></div></div>
+                    </div>
+                    <div class="tr">
+                        <div class="th"><div translate>orders.single.events.description</div></div>
+                        <div class="td"><div ng-bind="event.description"></div></div>
+                    </div>
+                    <div class="tr">
+                        <div class="th"><div translate>orders.single.events.date</div></div>
+                        <div class="td"><div ng-bind="event.formatted_date"></div></div>
+                    </div>
+                </div>
+                <div class="tbody" ng-hide="$smartTableData.length">
+                    <div class="tr nodata">
+                        <div class="td" translate>noMatches</div>
+                    </div>
+                </div>
+            </div>
+
+            <div table-showing-info="orders.single.events.viewStatus"></div>
+
+            <div table-view-options></div>
+        </div>
+    </div>
+
+    <div class="data-block collapse-block attachments-block" ng-if="order.status === 'PENDING_DOCUMENTS' || order.status === 'INFO_REQUIRED'">
+        <input id="order-attachments-block" class="collapse-block-input" type="checkbox">
+        <label for="order-attachments-block" class="collapse-block-button" translate>orders.single.attachments.title</label>
+        <div class="collapse-block-data">
+            <div class="dropzone-control" ng-model="attachmentsDropzone"></div>
+            <div class="files-list">
+                <div class="file" ng-repeat="item in attachments">
+                    <span class="title icon icon-doc">{{ item }}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>

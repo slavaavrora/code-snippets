@@ -1,0 +1,174 @@
+.assistant-criteria-content {
+
+    margin: 0 -25px;
+
+    .criteria-top {
+
+        .criteria-row {
+            display: flex;
+            justify-content: space-between;
+            min-height : 64px;
+            border-bottom: 1px solid #fff;
+        }
+        .criteria-col {
+            flex: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20%;
+
+            &:first-of-type {
+                width: 20%;
+                justify-content: flex-start;
+            }
+        }
+    }
+
+    .table {
+        overflow: hidden;
+
+        .item {
+            display: table;
+
+            width: 100%;
+            border-top: 1px solid #fff;
+
+            &.hide .cell.show {
+                background-color: #fbf881;
+            }
+
+            .css-label-radio {
+                height: 100%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .css-radio:checked + label:after {
+                content: "";
+                width: 2000px;
+                height: 100%;
+                position: absolute;
+                right: 0;
+                top: 0;
+                background: #faf881;
+                z-index: -1;
+            }
+            .css-label-radio:before {
+                margin-right: 0;
+            }
+
+            .cell {
+                display: table-cell;
+                position: relative;
+                vertical-align: middle;
+                height: 64px;
+                font-family: 'GothamBold';
+                color: #131313;
+                font-size: 12px;
+                width: 17.5%;
+                text-align: center;
+                &:nth-child(1) {
+                    width: 30%;
+                    text-align: left;
+                }
+                &.show {
+                    background-color: #fbf881;
+                }
+                i {
+                    line-height: 25px;
+                    margin-left: 12px;
+                    width: 25px;
+                    position: absolute;
+                    left: 0;
+                    height: 17px;
+                    color: #131313;
+                    font-size: 25px;
+                    display: inline-block;
+                }
+                span {
+                    padding-left: 37px;
+                    font-family: 'Open Sans Semibold';
+                    word-wrap: break-word;
+                    color: #131313;
+                    font-size: 15px;
+                    line-height: 25px;
+                    margin-left: 20px;
+                    display: inline-block;
+                    vertical-align: top;
+                    //width: 100%;
+                }
+            }
+            &:nth-of-type(1) {
+                border: 0;
+                text-transform : uppercase;
+            }
+            &:nth-of-type(5) {
+                border-bottom: 1px solid #fff;
+            }
+        }
+    }
+
+    @media screen and (max-width: 1135px) {
+        .table .item .cell span {
+            vertical-align: text-bottom;
+        }
+    }
+    @media all and (breakpoint('tablet-portrait')) {
+        padding-left: 6px;
+
+        .table .item .cell span {
+            line-height : 1;
+        }
+    }
+    @media screen and (max-width: 740px) {
+        .table .item .cell span {
+            width: 50%;
+            vertical-align: text-bottom;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        padding-left: 6px;
+        .table .item .cell {
+            i {
+                display: none;
+            }
+            span {
+                width: 60%;
+                vertical-align: text-bottom;
+                margin-left: 10px;
+            }
+        }
+    }
+    @media all and (breakpoint('mobile')) {
+        margin: 0;
+        padding: 15px 0 0;
+
+        .table .item {
+            &:nth-of-type(1) {
+                text-transform : none;
+            }
+            .cell span {
+                margin-left: 0;
+                padding-left: 5px;
+                box-sizing: border-box;
+                width: 100%;
+                font-size: 13px;
+                line-height : 1;
+            }
+            .cell {
+                width: 25px;
+                font-size: 14px;
+            }
+        }
+
+        .css-radio + .css-label-radio {
+            margin-left: 0;
+        }
+
+        .css-label-radio:before {
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,401 @@
+.hidden{
+    display: none !important;
+}
+%padding{
+    padding: 15px;
+}
+.container-address{
+    .container-address-info{
+        padding: 0;
+    }
+    p.content{
+        display: none;
+    }
+}
+.bmr-notice:before {
+    content: ' *';
+    font-size: 15px;
+    position: relative;
+    top: -5px;
+}
+
+.has-error .bmr-notice:before {
+    color: $red ;
+    content: ' !';
+}
+.has-error .chzn-single span {
+    color: $red ;
+}
+
+.headInfoForm{
+    display: block;
+    background: $white;
+    @extend %padding;
+    line-height: 1.5;
+}
+
+%paper-plane {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    content: "\f1d8";
+    position: absolute;
+    font-size: 19px;
+}
+
+
+textarea {
+    resize: none;
+    overflow: hidden !important;
+    max-width : 100%;
+    min-height: 150px;
+}
+
+.bmrForm{
+    padding: 1px 20px 1px 20px;
+
+    .bmr-bookmaker-input {
+        margin-bottom: 0px;
+    }
+
+    .radio-label {
+        margin-top: 5px !important;
+    }
+
+    &:after{
+        content: "";
+        clear: both;
+    }
+
+    display: block;
+    margin-bottom: 10px;
+    background: $white;
+    @extend %padding;
+
+    .bLeft, .bRight{
+        float: left;
+        width: 49%;
+    }
+    .main-inputs {
+//        @include clearfix;
+        padding-top: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        .form-row {
+            flex: 0 0 49%;
+//            display: flex;
+//            flex-direction: column;
+//            justify-content: space-between;
+        }
+
+//        input {
+//            margin-bottom: 0;
+//        }
+    }
+    .bLeft{
+        padding-right: 1%;
+    }
+    .bRight{
+        padding-left: 1%;
+    }
+    input[type="file"]{
+        display: none;
+    }
+
+    .bmr_file{
+        cursor: pointer;
+        line-height: 45px;
+        margin-top: 13px;
+        max-width: 250px;
+
+        font-family: GothamMed, sans-serif;
+        text-transform: uppercase;
+        font-weight: normal;
+    }
+    .fileArchive{
+        ///display: none;
+        position: relative;
+        width: 100%;
+        margin: 10px 0;
+        box-sizing: border-box;
+        .delArchive, .delFile{
+            line-height: 22px;
+            top: 10px;
+            position: absolute;
+            height: 22px;
+            right: 10px;
+            font-size: 16px;
+            font-weight: normal;
+            color: #1f1f1f;
+            vertical-align: middle;
+            font-style: italic;
+            cursor: pointer;
+
+            &:after {
+                @include icomoon;
+                content: "\e62d";
+                font-size: 16px;
+            }
+        }
+        .file-preview{
+            padding: 10px 110px 10px 10px;
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            background: $grey-light;
+            border: 1px solid $grey;
+            display: block;
+            @include clearfix;
+
+            width: 100%;
+            position: relative;
+            img{
+                float: left;
+                margin-right: 10px;
+                max-width: 100px !important;
+            }
+        }
+
+    }
+    .fileLoadedPARENT{
+        position: relative;
+        height: 37px;
+        overflow: hidden;
+        background: $grey-light;
+        border: 1px solid $grey;
+        margin: 10px 0;
+        box-sizing: border-box;
+        width: 99.5%;
+
+        .fileLoaded{
+
+            padding: 0 5px;
+            line-height: 37px;
+            color: $white;
+            font-style: italic;
+            position: absolute;
+            width: 100%;
+        }
+        .cancelFile{
+            line-height: 22px;
+            position: absolute;
+            height: 22px;
+            right: 10px;
+            top: 50%;
+            font-size: 16px;
+            font-weight: normal;
+            color: #1f1f1f;
+            vertical-align: middle;
+            font-style: italic;
+            margin-top: -11px;
+            cursor: pointer;
+
+            &:after {
+                @include icomoon;
+                content: "\e62d";
+                font-size: 16px;
+            }
+        }
+
+    }
+    .file-title {
+        color: #000;
+    }
+    .requireField{
+        color: #131313;
+        font-style: italic;
+        font-size: 14px;
+        margin-bottom: 10px;
+        strong{
+            color: $dark;
+            font-family: Gotham, sans-serif;
+            font-size: 16px;
+            font-style: normal;
+            font-weight: bold;
+            vertical-align: top;
+        }
+    }
+    .conditions-label {
+        font-family: "Open Sans Italic",sans-serif;
+        font-size: 14px;
+        color: #2d2d2d;
+        font-weight: normal;
+        text-transform: none;
+
+    }
+
+}
+
+// Скрепка на форме возле лейбла прекрепить файл
+.bmr-paperclip {
+    font-size: 28px;
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #d0d0d0;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+    background-color: #f4f4f4;
+//    transform: rotate(90deg);
+
+    &::before {
+        position: relative;
+        top: 7px;
+    }
+}
+
+label.bmr_file:hover .bmr-paperclip {
+    color: white;
+    background-color: $lightblue;
+}
+
+.complaint-form-wrapper {
+    .bmr-paperclip {
+        font-size: 22px;
+        width: 36px;
+        height: 36px;
+        &::before {
+            top: 6px;
+        }
+    }
+}
+
+.bmr-file-attach-text {
+    color: #131313;
+}
+.bmr_file:hover .bmr-file-attach-text {
+    color: $lightblue;
+    cursor: pointer;
+}
+
+.theButton{
+    margin: 30px 0;
+    text-align: center;
+}
+
+/*
+.complaint-form-first-group {
+    @include clearfix;
+}
+*/
+
+.content-middle {
+    .chzn-container {
+        width : 100%;
+        a {
+            height : 100%;
+        }
+        // Список элементов
+        .chzn-drop .chzn-results {
+            font-family: "Open Sans", sans-serif;
+            font-size: 14px;
+            color: #333333;
+            border: 1px solid #e8e8e8;
+            padding: 0;
+            margin: 0;
+            li {
+                margin: 0;
+                text-align: left;
+                line-height: 1.3;
+                height: auto;
+                padding: 13px 6px;
+            }
+        }
+        .chzn-drop {
+            border: none;
+        }
+    }
+    .chzn-container-single .chzn-single {
+        text-align: left;
+        height: auto;
+        font-size: 14px;
+        line-height: 1.3;
+        padding: 14px 30px 14px 10px;
+
+        //Контейнер с стрелочкой
+        div {
+            width: 49px;
+            // Стрелочка
+            b {
+                top: 18px;
+                left: 17px;
+            }
+        }
+    }
+}
+
+%submit-btn {
+    outline: none;
+    padding: 6px 35px;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: Gotham, sans-serif;
+    font-weight: bold;
+    font-size: 21px;
+    width: auto;
+    border: 3px solid #0087c7;
+    background-color: transparent;
+    color: black;
+    display: block;
+    margin: 0 auto;
+    float: none;
+    @include appearance(none);
+    position: relative;
+    transition: all 0.3s;
+    z-index: 1;
+
+
+    &:hover {
+        color: #fff;
+
+        &:after {
+            height: 100%;
+        }
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        z-index: -1;
+        transition: all 0.3s;
+        width: 100%;
+        height: 0;
+        top: 0;
+        left: 0;
+        background: #0087c7;
+    }
+
+    &:disabled {
+        background   : transparent;
+        border-color : #bababa;
+        color: #bababa;
+        cursor       : default;
+        &:hover {
+            background   : inherit;
+            border-color : #bababa;
+        }
+        &:after, &:before {
+            color: #bababa;
+            background   : inherit;
+        }
+    }
+}
+
+.complaint-form-buttons .bmr_file {
+    font-family: "Open Sans", sans-serif;
+    text-transform: none;
+}
+
+button {
+    @include appearance(none);
+}
+
+.comment-submit-btn {
+    text-align: right;
+    margin-bottom: 5px;
+}

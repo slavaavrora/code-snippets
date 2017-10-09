@@ -1,0 +1,21 @@
+/* line 2, ../sass/style.scss */
+.acf-table-fields table {
+  border-collapse: collapse;
+  width: 100%;
+}
+/* line 6, ../sass/style.scss */
+.acf-table-fields th,
+.acf-table-fields td {
+  background: #fff;
+  border: 1px solid #e1e1e1;
+  padding: 10px;
+  text-align: center;
+}
+/* line 13, ../sass/style.scss */
+.acf-table-fields th {
+  text-align: left;
+}
+/* line 16, ../sass/style.scss */
+.acf-table-fields .top th {
+  text-align: center;
+}

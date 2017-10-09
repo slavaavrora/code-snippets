@@ -1,0 +1,14 @@
+@media all and (breakpoint('mobile')) {
+  .assistant {
+    .content-middle {
+      .assistant-header {
+        .prev {
+          padding-left: 8px;
+        }
+        .next {
+          padding-right: 8px;
+        }
+      }
+    }
+  }
+}

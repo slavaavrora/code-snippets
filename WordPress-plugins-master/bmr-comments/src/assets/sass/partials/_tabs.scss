@@ -1,0 +1,194 @@
+// TABS
+// ===========================
+.comments-tabs {
+    position: relative;
+
+    div.comments-sort-select {
+        display: none;
+    }
+    .comments-sort-select {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 170px;
+        height: 35px;
+        font: 14px Gotham;
+        overflow: hidden;
+
+        .selected {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+
+            &:focus {
+                outline: none;
+            }
+        }
+        .items li.active {
+            color: #fff;
+            background-color: #00ace8;
+        }
+
+        .dropdown {
+            opacity: 0;
+            transition: opacity .2s linear;
+            max-height: 105px;
+
+            li {
+                line-height: 1.5;
+                padding: 7px 10px;
+            }
+        }
+
+        &.opened {
+            overflow: visible;
+        }
+        &.opened .dropdown {
+            opacity: 1;
+        }
+    }
+
+    &[data-current-tab="native"] {
+        div.comments-sort-select {
+            display: block;
+        }
+        .tabs-nav {
+            padding-right: 190px !important;
+        }
+    }
+
+    .tabs-nav {
+        min-height: 55px;
+        padding: 0 15px;
+        border-bottom: 2px solid #f1f2f2;
+        box-sizing: border-box;
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .tab-nav-item {
+        height: 55px;
+        display: inline-flex;
+        align-items: center;
+        cursor: pointer;
+        color: #aaaaaa;
+        font: normal 16px "Open Sans Semibold";
+        border-bottom: 2px solid transparent;
+        box-sizing: border-box;
+        transition: color 500ms, border 500ms;
+
+        &:not(:last-of-type) {
+            margin-right: 45px;
+        }
+        .comments-count {
+            font: normal 16px "Open Sans Semibold";
+            margin-left: 5px;
+            font-style: normal;
+        }
+        &[class*="icon-"] {
+            font-family: icomoon;
+
+            &:before {
+                font-size: 20px;
+            }
+        }
+        &.active, &:hover {
+            color: #000;
+
+        }
+        &.active {
+            border-bottom: 2px solid #3b86c4;
+        }
+
+        &.icon-facebook::before {
+            content: "\e6e9";
+        }
+
+        &.icon-vkontakte::before {
+            content: "\e6ea"
+        }
+
+        &.icon-facebook:hover::before,
+        &.icon-facebook.active::before {
+            color: #376cba;
+        }
+
+        &.icon-vkontakte:hover::before,
+        &.icon-vkontakte.active::before {
+            color: #3791ba;
+        }
+    }
+    .tabs-content {
+        padding: 10px;
+        box-sizing: border-box;
+        background-color:  #fff;
+    }
+    .tab-pane {
+        height: 0;
+        overflow: hidden;
+        position: relative;
+        max-width: 100%;
+
+        &.active {
+            display: block;
+            height: auto;
+            overflow: visible;
+        }
+    }
+
+    @media all and (max-width: 1200px) {
+        .comments-sort-select {
+            position: relative;
+            margin: 10px 10px 0 auto;
+            top: auto;
+            right: auto;
+
+            select {
+                position: absolute;
+                top: 0;
+            }
+        }
+        &[data-current-tab="native"] .tabs-nav {
+            padding-right: 15px !important;
+        }
+    }
+
+    @media all and (max-width: 500px) {
+        .comments-sort-select {
+            margin: 10px auto 0;
+            width: 96%;
+        }
+
+        .tab-nav-item {
+            &:not(:last-of-type) {
+                margin-right: 20px;
+            }
+            &[class*="icon-"]::before {
+                width: 30px;
+                height: 30px;
+                font-size: 14px;
+                line-height: 30px;
+                text-align: center;
+                color: #fff !important;
+                background-color: #ababab;
+                border-radius: 4px;
+            }
+
+            &.icon-facebook::before {
+                content: "\e610";
+            }
+            &.icon-vkontakte::before {
+                content: "\e613"
+            }
+            &.icon-facebook:hover::before,
+            &.icon-facebook.active::before {
+                background-color: #376cba;
+
+            }
+            &.icon-vkontakte:hover::before,
+            &.icon-vkontakte.active::before {
+                background-color: #3791ba;
+            }
+        }
+    }
+}

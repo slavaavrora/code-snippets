@@ -1,0 +1,83 @@
+.translations-page {
+    form {
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .translation-progress {
+        text-align: center;
+    }
+
+    .original {
+        padding-left: 0;
+        flex: 1 0 46%;
+    }
+    .translation {
+        flex: 1 0 46%;
+    }
+    .spinner-container {
+        flex: 0 0 20px;
+        padding: 10px 0 0 !important;
+    }
+
+    div {
+        box-sizing: border-box;
+        padding: 10px 0 20px 0;
+    }
+    textarea {
+        flex: 0 0 48%;
+
+        box-sizing: border-box;
+        padding: 20px;
+        min-height: 100px;
+    }
+
+    .notes {
+        margin-top: 10px;
+        padding: 10px;
+        flex-basis: 100%;
+        border: 1px dashed grey;
+    }
+    .helper {
+        padding-top: 0;
+        margin-bottom: 10px;
+        flex-basis: 100%;
+        border-bottom: 1px dashed rgba(121, 121, 121, 0.41);
+    }
+    .error-text {
+        color: red;
+    }
+    .btn-container {
+        background: rgba(255,255,255,0.7);
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        padding: 0;
+        text-align: center;
+        z-index: 999;
+    }
+    .button-default {
+        text-transform: none;
+        width: 100%;
+        padding: 15px 45px;
+        box-sizing: border-box;
+        height: 100%;
+
+    }
+    .icon-spinner {
+        color: #3b86c4;
+        display: none;
+    }
+    .icon-loop {
+        display: none;
+    }
+
+    #lang-select {
+        font-family: "Gotham", sans-serif;
+        padding: 10px;
+        height: auto;
+    }
+}

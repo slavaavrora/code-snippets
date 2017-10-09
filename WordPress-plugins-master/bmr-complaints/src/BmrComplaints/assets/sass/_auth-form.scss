@@ -1,0 +1,121 @@
+.bmr-auth-form-container {
+    background: image-url('auth_bg.jpg') 0/cover;
+    width: 100%;
+    min-height: 479px;
+    /* height: 479px; */
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.bmr-auth-form-block {
+    text-align: center;
+    h2 {
+        padding-top: 25px !important;
+        padding-bottom: 15px !important;
+        font-family: "Open Sans", sans-serif !important;
+        font-size: 24px !important;
+        color: #fff !important;
+        font-weight: normal;
+        text-shadow: 0 0 9px rgba(0,0,0,0.38) !important;
+    }
+
+    .user-login-registration {
+        margin-top: 15px;
+        color: #898989;
+        font-size: 14px;
+        font-family: "GothamBold", sans-serif;
+        text-align: center;
+
+        a {
+            color: inherit;
+            border-bottom: 1px solid #c7c7c9;
+            text-transform: uppercase;
+
+            &:hover, &:active {
+                text-decoration: none;
+                color: #000;
+            }
+        }
+    }
+}
+
+.bmr-auth-form {
+    text-align: left;
+    padding: 10px 15px;
+    margin: 0 auto;
+    width: 300px;
+    /*height: 400px;*/
+    box-sizing: border-box;
+    background: rgba(255,255,255,0.85);
+    box-shadow: 0 0 9px 0 rgba(0,0,0,0.38);
+
+    label,.wp-social-login-connect-with-custom {
+        display: block;
+        margin: 13px 0 9px;
+        text-transform: uppercase;
+        font-size: 16px;
+        font-family: "GothamBold";
+        color: #2d2d2d;
+    }
+    .wp-social-login-connect-with-custom {
+        margin-bottom: 0;
+        margin-top: 15px;
+    }
+
+    #wp-social-login-connect-with {
+        display: none;
+    }
+
+    input {
+        width: 100%;
+        box-sizing: border-box;
+        padding: 10px;
+        font: italic 14px 'Open sans';
+        border: 1px solid #d8d9d9;
+        @include appearance(none);
+        border-radius: 0;
+    }
+    .btn-submit-form {
+        width: 100%;
+        border: none;
+        text-transform: uppercase;
+        color: #fff;
+        font-family: 'GothamBold';
+        padding: 17px 0 12px;
+        font-size: 18px;
+        font-weight: bold;
+        background: #4271b5;
+        cursor: pointer;
+    }
+  /*  .login-checkbox {
+        font-size: 14px;
+        font-style: italic;
+        font-family: "Open Sans", sans-serif;
+        font-weight: normal;
+        display: inline-block;
+        text-transform: inherit;
+        margin: 5px 10px 3px 35px;
+    }
+
+    .form-item-checkbox {
+        margin: 5px 0 15px 0;
+    }*/
+
+   /* input[type="checkbox"] + label {
+        @include user-select();
+    }
+
+    input[type="checkbox"] + label:before {
+        width: 25px;
+        height: 25px;
+        display: inline-block;
+    }
+    input[type="checkbox"]:checked + label:after {
+        font-family: FontAwesome;
+        font-style: normal;
+        font-size: 22px;
+        content: "\f00c";
+    }*/
+
+}
+
